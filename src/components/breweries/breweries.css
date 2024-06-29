@@ -1,0 +1,291 @@
+
+.search-breweries-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: darkgray;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   padding-left: 50px;
+    
+  }
+  
+  .search-breweries-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .search-breweries-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  
+  .search-breweries-select,
+  .search-breweries-input {
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-breweries-select:focus,
+  .search-breweries-input:focus {
+    border-color: #007bff;
+  }
+  
+  .search-breweries-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-breweries-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .logout-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: #c82333;
+  }
+  
+  .search-breweries-error {
+    color: red;
+    margin-top: 20px;
+  }
+  
+  .brewery-list-container {
+    margin-top: 30px;
+  }
+  
+  .but-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .list-cont{
+    display: flex;
+    background-color: ;
+    flex-direction: column;
+  }
+
+.list-item{
+    list-style: none;
+}
+
+
+.list-item-cont{
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.brew-name{
+    text-decoration: none;
+}
+
+
+.list-cont {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .list-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-item:hover {
+    transform: translateY(-3px);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .list-item-cont {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 120px;
+  }
+  
+  .brew-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  
+  .brew-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+#brewery-detail {
+    max-width: 80vw;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: lightgray !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brewery-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .brewery-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .brewery-info span {
+    font-weight: bold;
+  }
+  
+  .rating {
+    font-size: 25px;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .review-form {
+    margin-top: 20px;
+  }
+  
+  .reviews-list {
+    margin-top: 20px;
+  }
+  
+  .det-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-cont{
+    margin: 20px;
+  }
+
+
+
+.review-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-form-container h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .review-form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .review-form-container input[type="number"],
+  .review-form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .review-form-container textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .review-form-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .review-form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .review-form-container .error-message {
+    color: red;
+  }
+  
+  .review-form-container .success-message {
+    color: green;
+  }
+  
+  #icon-prop{
+    margin-right: 10px;
+  }
+
+  .logout-icon{
+    margin-left: 5px;
+  }
