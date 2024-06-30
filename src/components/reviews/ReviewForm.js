@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 import './reviews.css'; 
-import Rating from "./Rating"
+import Rating from "./Rating";
 
 const ReviewForm = ({ breweryId, onReviewAdded }) => {
-  const [rating, setRating] = useState('');
+  const [rating, setRating] = useState(0); // Initialize with 0
   const [description, setDescription] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -19,7 +19,7 @@ const ReviewForm = ({ breweryId, onReviewAdded }) => {
       const response = await api.post(`/reviews/${breweryId}`, newReview);
       if (response) {
         setSuccess('Review added successfully');
-        setRating('');
+        setRating(0); // Reset rating
         setDescription('');
         onReviewAdded();
       } else {
@@ -39,17 +39,19 @@ const ReviewForm = ({ breweryId, onReviewAdded }) => {
         <label>Rating</label>
         <input
           type="number"
+          id="inp-num"
           value={rating}
-          onChange={(e) => setRating(Number(e.target.value))}
-          min="1"
+          onChange={(e) => setRating(parseFloat(e.target.value))}
+          min="0.1"
           max="5"
           step="0.1"
           required
         />
-        <Rating setRating={setRating}/>
+        <Rating rate={rating} setRate={setRating} />
 
         <label>Description</label>
         <textarea
+        id="input-rev"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required

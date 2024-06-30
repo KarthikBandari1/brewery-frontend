@@ -22,7 +22,7 @@ const ReviewsList = ({ brewery, refreshReviews, setRating }) => {
   
           setRating(roundedRating);
         } else {
-          setRating('-');
+          setRating('No rating yet');
         }
       } catch (error) {
         setError('Error fetching reviews');

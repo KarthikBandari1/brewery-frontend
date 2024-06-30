@@ -1,17 +1,25 @@
 
 .search-breweries-container {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: darkgray;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-   padding-left: 50px;
-    
-  }
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding-left: 50px;
+  font-family: Roboto;
+  background-image: 
+      url("https://st2.depositphotos.com/1177973/5634/i/450/depositphotos_56349665-stock-photo-beer-barrel-with-beer-glasses.jpg"),
+      linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.4)); /* Adjust opacity here */
+  background-blend-mode: overlay;
+}
+
+
   
   .search-breweries-title {
-    font-size: 20px;
-    color: #333;
+    font-size: 23px;
+    color: rgb(62, 58, 58);
     margin-bottom: 20px;
+    font-family: roboto;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+
   }
   
   .search-breweries-filter {
@@ -42,17 +50,17 @@
   
   .search-breweries-button {
     padding: 10px 20px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
-    background-color: #007bff;
     color: white;
-    font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background-color: #883ad6;
+    font-size: 16px;
   }
   
   .search-breweries-button:hover {
-    background-color: #0056b3;
+    background-color: #8f2bf4;
   }
   
   .logout-button {
@@ -65,6 +73,7 @@
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border: 1px solid black;
   }
   
   .logout-button:hover {
@@ -88,7 +97,7 @@
 
   .list-cont{
     display: flex;
-    background-color: ;
+    background-color: rgb(231, 226, 226) !important;
     flex-direction: column;
   }
 
@@ -115,7 +124,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(79, 79, 79, 0.1);
   }
   
   h2 {
@@ -136,6 +145,8 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-width: 1px;
   }
   
   .list-item:hover {
@@ -176,21 +187,35 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: lightgray !important;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/622fd17d36eae15ad160c07e/1652665254173-FBF9VHVZG27JUXHDCHLL/Ramblers+3+.jpg"), 
+                      linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)); 
+    background-blend-mode: overlay; 
+    background-size: cover;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+    min-height: 200vh;
+}
+
   
   .brewery-name {
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
+    background-color: white;
+    margin-left: 28%;
+    margin-right: 28%;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: Roboto;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   
   .brewery-info {
     font-size: 16px;
-    color: #555;
+    color: black;
     margin-bottom: 8px;
+    font-family: roboto;
   }
   
   .brewery-info span {
@@ -200,10 +225,24 @@
   .rating {
     font-size: 25px;
     color: #333;
+    font-weight: 500;
     margin-top: 10px;
-    text-align: center;
-  }
-  
+    background-color: rgb(221, 199, 78); 
+    padding: 5px 30px; 
+    display: inline-block; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+
+
+
   .review-form {
     margin-top: 20px;
   }
@@ -284,8 +323,39 @@
   
   #icon-prop{
     margin-right: 10px;
+    font-size: 20px;
   }
 
   .logout-icon{
     margin-left: 5px;
   }
+
+  .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loader {
+    border: 6px solid #f3f3f3; 
+    border-top: 6px solid #883ad6; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; 
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+  

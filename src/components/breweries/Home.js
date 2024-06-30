@@ -10,6 +10,7 @@ const Home = () => {
   const [breweries, setBreweries] = useState([]);
   const [error, setError] = useState('');
   const [filter, setFilter] = useState('city');
+  const [loading, setLoading] = useState(true); 
 
   const navigate = useNavigate();
 
@@ -19,8 +20,10 @@ const Home = () => {
         const response = await fetch('https://api.openbrewerydb.org/v1/breweries?per_page=10');
         const data = await response.json();
         setBreweries(data);
+        setLoading(false); 
       } catch (error) {
         setError('Error fetching breweries');
+        setLoading(false); 
       }
     };
     fetchBreweries();
@@ -37,9 +40,11 @@ const Home = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    setLoading(true)
     const url = `https://api.openbrewerydb.org/v1/breweries`;
     const response = await fetch(url + `?by_${filter}=${searchTerm}&per_page=5`);
     const data = await response.json();
+    setLoading(false)
     setBreweries(data);
   };
 
@@ -68,8 +73,9 @@ const Home = () => {
         </div>
       </form>
       {error && <p className="search-breweries-error">{error}</p>}
+      {loading && <div className="loader-container"><div className="loader"></div></div>} 
       <div className="brewery-list-container">
-        <BreweryList breweries={breweries} setBreweries={setBreweries} />
+        <BreweryList breweries={breweries} />
       </div>
     </div>
   );

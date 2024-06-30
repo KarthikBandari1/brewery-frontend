@@ -46,12 +46,13 @@
   
   .button {
     padding: 0.8rem;
-    background-color: #007BFF;
+    background-color: #9d67d2;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     margin-top: 1rem;
+    font-size: 16px;
   }
   
   .error {
@@ -67,7 +68,31 @@
   }
   
   .link {
-    color: #007BFF;
+    color: #8000ff;
     text-decoration: none;
   }
+  
+  .passwordContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    width: 100%;
+    padding-right: 40px;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #b2afaf;
+    margin-right: 5px;
+  }
+  
+  .icon:hover {
+    color: #555;
+  }
+  
   

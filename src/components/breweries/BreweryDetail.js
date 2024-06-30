@@ -32,25 +32,31 @@ const BreweryDetail = () => {
     fetchBreweryDetails();
   }, [id]);
 
-  if (!brewery) return <p>Loading...</p>;
+  if (!brewery) {
+    return (
+      <div className="loader-container">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div id="brewery-detail">
-      
         <h2 className="brewery-name">{brewery.name}</h2>
         <div className='det-cont'> 
         <div className='left-cont'> 
-          <p className="brewery-info"><span><FaLocationDot id='icon-prop'/></span> {brewery.address_1}</p>
-          <p className="brewery-info"><span><FaPhoneAlt  id='icon-prop'/></span> {brewery.phone}</p></div>
-        <div>
-          <p className="brewery-info"><span><CiGlobe  id='icon-prop'/></span> <a href={brewery.website_url}>{brewery.website_url}</a></p>
-          <p className="brewery-info"><span>Type:</span> {brewery.brewery_type}</p>
+          {brewery.address_1 && <p className="brewery-info"><FaLocationDot id='icon-prop'/> {brewery.address_1}</p> }
+          {brewery.phone && <p className="brewery-info"><FaPhoneAlt  id='icon-prop'/> {brewery.phone}</p>}
         </div>
+        <div>
+          {brewery.website_url &&  <p className="brewery-info"><CiGlobe  id='icon-prop'/> <a href={brewery.website_url}>{brewery.website_url}</a></p>}
+          {brewery.brewery_type && <p className="brewery-info"><span>Type :</span> {brewery.brewery_type}</p>}
+        </div>
+        </div>
+        <div className="parent-container">
+          <p className="rating">Rating : {rating}</p>
         </div>
 
-        <p className="rating">Rating: {rating}</p>
-      
-      
       <div className="review-form">
         <ReviewForm breweryId={id} onReviewAdded={handleReviewAdded} />
       </div>

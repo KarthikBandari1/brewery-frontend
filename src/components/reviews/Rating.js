@@ -1,41 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaStar } from "react-icons/fa";
-const Rate = (props) => {
-	const [rate, setRate] = useState(0);
-    const {setRating} =props
-	return (
-		<div className="div1">
-			{[...Array(5)].map((item, index) => {
-				const givenRating = index + 1;
-				return (
-					<label>
-						<input
-                        className="inp-rad"
-							type="radio"
-							value={givenRating}
-							onClick={() => {
-								setRate(givenRating);
-                                setRating(givenRating)
-								alert(
-									`Are you sure you want to give 
-									${givenRating} stars ?`
-								);
-							}}
-						/>
-						<div className="div2">
-							<FaStar
-								color={
-									givenRating < rate || givenRating === rate
-										? "000"
-										: "rgb(192,192,192)"
-								}
-							/>
-						</div>
-					</label>
-				);
-			})}
-		</div>
-	);
+import './reviews.css';
+
+const Rating = ({ rate, setRate }) => {
+  const handleStarClick = (givenRating) => {
+    setRate(givenRating);
+  };
+
+  return (
+    <div className="rating-container">
+      {[...Array(5)].map((_, index) => {
+        const givenRating = index + 1;
+        const isPartial = rate > index && rate < givenRating;
+        return (
+          <label key={index} className="rating-label">
+            <input
+              className="inp-rad"
+              type="radio"
+              value={givenRating}
+              checked={rate >= givenRating}
+              onChange={() => handleStarClick(givenRating)}
+            />
+            <div className="star-wrapper">
+              <FaStar
+                className="empty-star"
+                style={{ fontSize: '40px', color: 'gray' }}
+              />
+              <div
+                className="filled-star-wrapper"
+                style={{
+                  width: isPartial ? `${(rate - index) * 100}%` : rate >= givenRating ? '100%' : '0%',
+                  overflow: 'hidden',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  height: '100%',
+                }}
+              >
+                <FaStar
+                  className="filled-star"
+                  style={{
+                    fontSize: '40px',
+                    color: 'rgb(221, 196, 55)',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                  }}
+                />
+              </div>
+            </div>
+          </label>
+        );
+      })}
+    </div>
+  );
 };
 
-export default Rate;
+export default Rating;
